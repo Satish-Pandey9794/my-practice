@@ -1,0 +1,219 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #87ceeb;
+}
+
+.center-container{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper{
+    display: flex;
+
+}
+
+.pole{
+    height: 600px;
+    width: 10px;
+    background-color: #000000;
+    border-bottom-left-radius: 10px;
+}
+
+.flag{
+    width: 405px;
+    height: 270px;
+    box-shadow: 5px 5px 10px 5px #777;
+}
+
+.stand{
+    background-color: #b0c4cd;
+    height: 20px;
+    border-radius: 4px;
+}
+.bottom{
+    width: 120px;
+}
+.middle{
+    width: 80px;
+    margin-top: -5px;
+}
+.top{
+    width: 50px;
+    margin-top: -5px;
+}
+
+
+
+.section{
+    height: 33.33%;
+    box-sizing: border-box;    
+}
+
+.section-top{
+    background-color: #ff9933;   
+}
+
+.section-middle{
+    padding: 4.5px;
+    background-color: #ffffff;
+}
+
+.section-bottom{
+    background-color: #138808;
+}
+
+.ashok-chakra{
+    width: 72px;
+    height: 72px;
+    position: relative;
+    border: 4.5px solid #000000;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.ashok-chakra::before{
+    content: "";
+    position: absolute;
+    top: 29.25px;
+    left:29.25px;
+    width: 13.5px;
+    height: 13.5px;
+    background-color: #000000;
+    border-radius: 50%;   
+}
+
+.spoke{
+    width: 4.5px;
+    height: 0;
+    position: absolute;
+    top: 34.875px;
+    left: 36px;
+    border-top: 1.125px solid transparent;
+    border-radius: 9px solid #000000;
+    border-bottom: 1.125px solid transparent;
+    transform-origin: 0 1.125px;
+}
+
+.spoke::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -1.125px;
+    left: 13.5px;
+    border-top: 1.125px solid transparent;
+    border-left: 22.5px solid #000000;
+    border-bottom: 1.125px solid transparent;   
+}
+
+.spoke::after{
+    content: "";
+    position: absolute;
+    width: 3.6px;
+    height: 3.6px;
+    top: 2.97px;
+    left: 34.2px;
+    background-color: #000000;
+    border-radius: 50%;
+
+}
+.spoke-one{
+    transform: rotate(0deg);
+}
+
+.spoke-two{
+    transform: rotate(15deg);
+}
+
+.spoke-three{
+    transform: rotate(30deg);
+}
+
+.spoke-four{
+    transform: rotate(45deg);
+}
+
+.spoke-five{
+    transform: rotate(60deg);
+}
+
+.spoke-six{
+    transform: rotate(75deg);
+}
+
+.spoke-seven{
+    transform: rotate(90deg);
+}
+
+.spoke-eight{
+    transform: rotate(105deg);
+}
+
+.spoke-nine{
+    transform: rotate(120deg);
+}
+
+.spoke-ten{
+    transform: rotate(135deg);
+}
+
+.spoke-eleven{
+    transform: rotate(150deg);
+}
+
+.spoke-twelve{
+    transform: rotate(165deg);
+}
+
+.spoke-thirteen{
+    transform: rotate(180deg);
+}
+
+.spoke-fourteen{
+    transform: rotate(195deg);
+}
+
+.spoke-fifteen{
+    transform: rotate(210deg);
+}
+
+.spoke-sixteen{
+    transform: rotate(225deg);
+}
+
+.spoke-seventeen{
+    transform: rotate(240deg);
+}
+
+.spoke-eighteen{
+    transform: rotate(255deg);
+}
+
+.spoke-ninteen{
+    transform: rotate(270deg);
+}
+
+.spoke-twenty{
+    transform: rotate(285deg);
+}
+
+.spoke-twenty-one{
+    transform: rotate(300deg);
+}
+
+.spoke-twenty-two{
+    transform: rotate(315deg);
+}
+
+.spoke-twenty-three{
+    transform: rotate(330deg);
+}
+
+.spoke-twenty-four{
+    transform: rotate(345deg);
+}

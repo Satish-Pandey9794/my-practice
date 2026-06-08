@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    height: 50px;
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+    padding-top: 20px;
+    
+}
+div{
+    display: inline;
+    padding: 75px;
+    font-size: 25px;
+
+}
+#logo{
+    padding-left: 500px;
+
+}
+a{
+    text-decoration: none;
+    color: antiquewhite;
+}

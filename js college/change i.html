@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        img{
+            height: 150px;
+            width : 200px;
+
+        }
+    </style>
+<body>
+    <div>
+        <div>
+            <center>
+            <img src="f1.jpg" alt="Flower" id="main">
+            </center>
+        </div>
+        <div>
+            <img src="f2.jpg" onclick="change(this.src)">
+            <img src="f4.jpg" onclick="change(this.src)">
+            <img src="f1.jpg" onclick="change(this.src)">
+            <img src="f5.jpg" onclick="change(this.src)">
+            <img src="f7.jpg" onclick="change(this.src)">
+            <img src="f6.jpg" onclick="change(this.src)">
+        </div>
+    </div>
+    <script>
+        const change = src=>{
+            document.getElementById('main').src=src
+        }
+    </script>
+</body>
+</html>

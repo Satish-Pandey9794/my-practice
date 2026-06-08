@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: azure;
+            box-sizing: 100% 100%;
+            overflow: hidden;
+        }
+        .outer{
+            height: 450px;
+            width: 400px;
+            position: absolute;
+            right: -350px;
+            top: 100px;
+            transition: right 2s;
+        }
+        .outer:hover{
+            right: 0px;
+            transition: right 2s;
+
+        }
+        .left{
+            height: 350px;
+            width: 40px;
+            background: -webkit-linear-gradient(#ffb405, #529aea);
+            float: left;
+            border-radius: 8px 0px 0px 8px;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+            padding-left: 10px;
+            padding-top: 100px;
+        }
+        .right{
+            height: 450px;
+            width: 300px;
+            background: -webkit-linear-gradient(#0066ff,rgb(217, 24, 95));
+            float: left;
+            border-radius: 0px 8px 8px 0px;
+            color: white;
+            font-weight: bold;
+            padding-left: 50px;
+            
+        }
+        .f{
+            height: 35px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid white;
+            margin-bottom: 5px;
+        }
+        .btn{
+            height: 40px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: 700px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+    <div class="left">
+        E<br/> N </br> Q </br> U </br> I </br> R </br> Y
+    </div>
+    <div class="right">
+        <h1 style="text-align: center;color: #fff;">Enquiry Form</h1>
+        Name:</br>
+        <input type="text" placeholder="Enter Your Name...." name="a" class="f"/></br>
+        Email:</br>
+        <input type="Email" placeholder="Enter Your Email...." name="b" class="f"/></br>
+        Content No:</br>
+        <input type="text" placeholder="Enter Your Number...." name="c" class="f"/></br>
+        Address:</br>
+        <textarea class="f" name="d" placeholder="Enter Your Address"></textarea></br>
+        <button class="btn" value="submit">Submit</button></br>
+        <button class="btn" value="reset">Reset</button></br>
+
+
+
+    </div>
+    </div>
+</body>
+</html>

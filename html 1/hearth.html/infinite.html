@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .infinite{
+            position: relative;
+            height: 100px;
+            width: 212px;
+            
+            margin: 100px auto;
+
+        }
+        .infinite::before,
+        .infinite::after{
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 20px solid red;
+            border-radius: 50px 50px 0px 50px;
+            transform: rotate(-45deg);
+            top: 0;
+            left: 0;
+
+        }
+        .infinite::after{
+            left: auto;
+            right: 0px;
+            transform: rotate(-222deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="infinite"></div>
+</body>
+</html>

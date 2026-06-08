@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <div class="wrapper">
+        <input type="date">
+        <p> you are <span id="age"></span> year old.</p>
+
+    </div>
+    <script>
+        const inputDate = document.querySelector('input');
+        const age = document.getElementById('age');
+
+        inputDate.addEventListener('change',(e) => {
+            age.innerText = new Date().getFullYear()-new Date(e.target.value).getFullYear();
+        }
+    )
+            alert ("thanks for giving me your date of birth");
+
+    </script>
+</body>
+</html>

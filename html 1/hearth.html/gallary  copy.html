@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>satish</title>
+    <style>
+        .box {
+            height: 600px;
+            width: 1000px;
+            margin: auto;
+        }
+
+        .row {
+            height: 300px;
+            width: 100%;
+
+        }
+
+        .col {
+            height: 240px;
+            width: 273px;
+            background-color: aquamarine;
+            float: left;
+            margin: 15px;
+            border: 5px solid #00ff21;
+            padding: 10px;
+        }
+
+        .col img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .lb {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            background-color: #808080;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .inner {
+            height: 550px;
+            width: 650px;
+            background-color: #fff;
+            padding: 15px;
+            margin: 0px auto;
+        }
+
+        .inner img {
+            height: 75%;
+            width: 100%;
+        }
+
+        .lb:target {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="row">
+            <div class="col">
+                <a href="#lb1"><img src="image2.jpg" alt="image3.jpg"></a>
+
+            </div>
+            <div class="col">
+                <a href="#lb2"><img src="image4.jpg" alt="image5.jpg"></a>
+
+            </div>
+            <div class="col">
+                <a href="#lb3"><img src="img1.jpg" alt="image nhi aa rhi h"></a>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <a href="#lb4"><img src="image2.jpg" alt="image3.jpg"></a>
+
+            </div>
+            <div class="col">
+                <a href="#lb5"><img src="image4.jpg" alt="image5.jpg"></a>
+
+            </div>
+            <div class="col">
+                <a href="#lb6"><img src="img1.jpg" alt="image nhi aa rhi h"></a>
+            </div>
+
+            <div class="lb" id="lb1">
+                <div class="inner">
+                    <h2 style="text-align: center color red;">this is image 1</h2>
+                    <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                    <img src="image2.jpg" alt="image3.jpg"></a>
+                    <a href="#lb6" style="font-size: 26px;color:red; float:left">back</a>
+                    <a href="#lb2" style="font-size: 26px;color:red; float:right">next</a>
+                </div>
+            </div>
+                <div class="lb" id="lb2">
+                    <div class="inner">
+                        <h2 style="text-align: center color red;">this is image 2</h2>
+                        <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                        <a href="#"><img src="image4.jpg" alt="image5.jpg"></a>
+                        <a href="#lb1" style="font-size: 26px;color:red; float:left">back</a>
+                        <a href="#lb3" style="font-size: 26px;color:red; float:right">next</a>
+                    </div>
+                    </div>
+                    <div class="lb" id="lb3">
+                        <div class="inner">
+                            <h2 style="text-align: center color red;">this is image 3</h2>
+                            <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                            <img src="image2.jpg" alt="image3.jpg"></a>
+                            <a href="#lb2" style="font-size: 26px;color:red; float:left">back</a>
+                            <a href="#lb4" style="font-size: 26px;color:red; float:right">next</a>
+                        </div>
+                        </div>
+
+                        <div class="lb" id="lb4">
+                            <div class="inner">
+                                <h2 style="text-align: center color red;">this is image 4</h2>
+                                <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                                <a href="#"><img src="image4.jpg" alt="image5.jpg"></a>
+                                <a href="#lb3" style="font-size: 26px;color:red; float:left">back</a>
+                                <a href="#lb5" style="font-size: 26px;color:red; float:right">next</a>
+                            </div>
+                            </div>
+                             <div class="lb" id="lb5">
+                <div class="inner">
+                    <h2 style="text-align: center color red;">this is image 5</h2>
+                    <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                    <img src="image2.jpg" alt="image3.jpg"></a>
+                    <a href="#lb4" style="font-size: 26px;color:red; float:left">back</a>
+                    <a href="#lb6" style="font-size: 26px;color:red; float:right">next</a>
+                        </div>
+                        </div>
+                         <div class="lb" id="lb6">
+                <div class="inner">
+                    <h2 style="text-align: center color red;">this is image 6</h2>
+                    <a href="#" style="color: red; font-size: 24px; float: right;">X</a>
+                    <img src="image2.jpg" alt="image3.jpg"></a>
+                    <a href="#lb5" style="font-size: 26px;color:red; float:left">back</a>
+                    <a href="#lb1" style="font-size: 26px;color:red; float:right">next</a>
+                    </div>
+                    </div>
+</body>
+
+</html>

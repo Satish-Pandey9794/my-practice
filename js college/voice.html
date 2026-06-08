@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <H1>THIS CODE IS TYPE TEXT AND LISTEN VOICE</H1>
+    <input type="text" id="text" placeholder="Type Something...">
+    <button onclick="speechSynthesis.speak(new SpeechSynthesisUtterance(text.value))">🎙️</button>
+    <br>
+    <br>
+    <h1>THIS CODE IS CHANGE BODY COLOR </h1>
+    <input type="checkbox" onclick="document.body.classList.toggle('dark')">
+    <br>
+    <br>
+    <h1>THIS CODE IS CKECK SEE YOUR PASSWORD</h1>
+    <input type="password" id="pwd" placeholder="Enter Your Password">
+    <input type="checkbox" onclick="pwd.type = this.checked ? 'text': 'password'">
+
+
+</body>
+
+</html>

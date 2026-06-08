@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pro Age Calculator</title>
+<style>
+* { box-sizing:border-box; margin:0; padding:0; font-family:"Poppins", Arial, sans-serif; }
+
+body { 
+    height:100vh; 
+    display:flex; 
+    justify-content:center; 
+    align-items:center; 
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Pro-level dark gradient */
+    color:white;
+    transition:0.5s;
+}
+
+/* Flip container */
+.flip-container { perspective:1200px; width:360px; height:380px; }
+
+/* Flip card */
+.flip-card {
+  width:100%; height:100%; transform-style:preserve-3d; transition:transform 0.8s; position:relative;
+}
+.flip-card.flip { transform:rotateY(180deg); }
+
+/* Card */
+.card {
+  position:absolute; width:100%; height:100%; border-radius:20px; 
+  padding:30px; display:flex; flex-direction:column; justify-content:center; align-items:center;
+  backface-visibility:hidden;
+  background: rgba(255,255,255,0.05); /* glassy / translucent */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+  color:white;
+}
+
+/* Front */
+.front h2 { margin-bottom:6px; }
+.front .subtitle { font-size:13px; color:#bbb; margin-bottom:20px; }
+.front input {
+  width:100%; padding:12px; border-radius:10px; border:1px solid #444; text-align:center; font-size:15px;
+  outline:none; margin-bottom:15px; background: rgba(255,255,255,0.1); color:white;
+  transition:0.3s;
+}
+.front input::placeholder { color:#ccc; }
+.front input:focus { border-color:#667eea; box-shadow:0 0 10px rgba(102,126,234,0.5); }
+
+.front button {
+  width:100%; padding:12px; border:none; border-radius:10px; 
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color:white; font-size:16px; cursor:pointer; transition:0.3s;
+}
+.front button:hover { transform:scale(1.05); box-shadow:0 5px 20px rgba(102,126,234,0.6); }
+
+/* Back */
+.back { transform:rotateY(180deg); text-align:center; }
+.back h2 { margin-bottom:15px; }
+.result { font-size:15px; font-weight:600; color:#90ee90; line-height:1.6; }
+.back button {
+  margin-top:20px; padding:10px 15px; border:none; border-radius:10px; background:#333; color:white; cursor:pointer;
+  transition:0.3s;
+}
+.back button:hover { background:#555; }
+</style>
+
+</head>
+
+<body>
+<div class="flip-container">
+  <div class="flip-card" id="flipCard">
+
+    <!-- FRONT -->
+    <div class="card front">
+      <h2>🎂 Age Calculator</h2>
+      <div class="subtitle">Enter DOB (DD-MM-YYYY)</div>
+      <input type="text" id="dob" placeholder="12-05-2002">
+      <button id="calcBtn">Calculate</button>
+      <p id="error" style="color:red;margin-top:10px;"></p>
+    </div>
+
+    <!-- BACK -->
+    <div class="card back">
+      <h2>✅ Result</h2>
+      <div class="result" id="result"></div>
+      <button id="resetBtn">Calculate Again</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// -------- Modular Functions --------
+const getElements = () => ({
+  dobInput: document.getElementById('dob'),
+  errorEl: document.getElementById('error'),
+  resultEl: document.getElementById('result'),
+  flipCard: document.getElementById('flipCard')
+});
+
+function parseDOB(dobValue){
+  const parts = dobValue.trim().split('-');
+  if(parts.length!==3) throw 'Format must be DD-MM-YYYY';
+  const day=parseInt(parts[0]), month=parseInt(parts[1])-1, year=parseInt(parts[2]);
+  const dob=new Date(year,month,day);
+  if(dob.getFullYear()!==year || dob.getMonth()!==month || dob.getDate()!==day) throw 'Invalid date';
+  return dob;
+}
+
+function calculateAgeFromDOB(dob){
+  const today=new Date();
+  let years=today.getFullYear()-dob.getFullYear();
+  let months=today.getMonth()-dob.getMonth();
+  let days=today.getDate()-dob.getDate();
+  if(days<0){ months--; days+=new Date(today.getFullYear(), today.getMonth(),0).getDate();}
+  if(months<0){ years--; months+=12; }
+  return {years, months, days};
+}
+
+function showResult(dobValue, age){
+  const {resultEl} = getElements();
+  resultEl.innerHTML = `DOB: ${dobValue}<br>Age: ${age.years} Years ${age.months} Months ${age.days} Days`;
+}
+
+function flipCardForward(){ getElements().flipCard.classList.add('flip'); }
+function flipCardBack(){ getElements().flipCard.classList.remove('flip'); }
+
+// -------- Event Listeners --------
+document.getElementById('calcBtn').addEventListener('click',()=>{
+  const {dobInput,errorEl} = getElements();
+  errorEl.innerText = '';
+  try{
+    const dobValue = dobInput.value;
+    if(!dobValue) throw 'Please enter DOB';
+    const dob = parseDOB(dobValue);
+    const age = calculateAgeFromDOB(dob);
+    showResult(dobValue,age);
+    flipCardForward();
+    confetti(); // optional confetti effect
+  }catch(err){
+    errorEl.innerText = err;
+  }
+});
+
+document.getElementById('resetBtn').addEventListener('click',()=>{
+  flipCardBack();
+  getElements().dobInput.value='';
+});
+
+// -------- Confetti Function (Simple) --------
+function confetti(){
+  const colors=['#f94144','#f3722c','#f9c74f','#90be6d','#43aa8b','#577590'];
+  for(let i=0;i<150;i++){
+    const conf=document.createElement('div');
+    conf.style.position='fixed';
+    conf.style.width='8px';
+    conf.style.height='8px';
+    conf.style.background=colors[Math.floor(Math.random()*colors.length)];
+    conf.style.left=Math.random()*window.innerWidth+'px';
+    conf.style.top='-20px';
+    conf.style.opacity=Math.random();
+    conf.style.borderRadius='50%';
+    conf.style.pointerEvents='none';
+    conf.style.animation=`drop ${1+Math.random()*2}s linear forwards`;
+    document.body.appendChild(conf);
+    setTimeout(()=>conf.remove(),3000);
+  }
+}
+
+// Confetti animation
+const style=document.createElement('style');
+style.innerHTML=`@keyframes drop{to{transform:translateY(100vh); opacity:0;}}`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
